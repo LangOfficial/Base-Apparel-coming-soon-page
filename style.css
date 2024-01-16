@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --clr-primary-100: hsl(0, 36%, 70%);
+  --clr-primary-400: hsl(0, 93%, 68%);
+
+  --clr-neutral-700: hsl(0, 6%, 24%);
+}
+
+body,
+button,
+input,
+h1,
+h1,
+h3 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  min-height: 100svh;
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
+header {
+  padding: 3rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*UTILTY CLASSES*/
+
+.color-ds-red {
+  color: var(--clr-primary-100);
+}
+
+.color-dark-red {
+  color: var(--clr-neutral-700);
+}
+
+.fw-semi-bold {
+  font-weight: 600;
+}
+
+.fw-thin {
+  font-weight: 300;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* CONTENT SECTION */
+
+/*CONTENT SECTION CONTAINER*/
+.content-section {
+  padding: 2rem;
+}
+
+/* HERO */
+
+.hero-icon {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 3rem;
+}
+
+/*CONTENT SECTION -> TITLE, DESCRIPTION*/
+
+.content-section > .split > h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-section > .split {
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  width: 90%;
+  max-width: 40ch;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  line-height: 1.5rem;
+}
+
+/*CONTENT SECTION -> EMAIL INPUT*/
+
+.email-input-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.email-input {
+  border-style: solid;
+  border-color: var(--clr-primary-100);
+  padding: 1.2rem;
+  padding-left: 2rem;
+  border-radius: 100vw;
+  width: 100%;
+}
+
+.email-enter-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgb(248, 191, 191);
+  background: linear-gradient(
+    90deg,
+    rgba(248, 191, 191, 1) 9%,
+    rgba(238, 140, 140, 1) 44%
+  );
+  padding: 1.1rem 2rem;
+  border: none;
+  border-radius: 100vw;
+  cursor: pointer;
+}
+
+.email-enter-button:hover {
+  background: rgb(244, 226, 226);
+  background: linear-gradient(
+    90deg,
+    rgba(244, 226, 226, 1) 0%,
+    rgba(255, 187, 187, 1) 66%
+  );
+}
+
+.error-text {
+  position: absolute;
+  bottom: -2rem;
+  left: 2rem;
+}
+
+.error-exclamation {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 6rem;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 1440px) {
+  body {
+    margin-bottom: 0;
+  }
+
+  /* GRID SETUP */
+  main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 120px 2fr;
+    grid-template-areas: 
+      "header hero" 
+      "content hero";
+  }
+  
+  .content-section {
+    grid-area: content;
+    align-self: center;
+    margin: 0 auto;
+  }
+  
+  .hero-section {
+    grid-area: hero;
+  }
+  
+  header {
+    grid-area: header; 
+    align-self: center;
+    padding: 0;
+    /* not sure how to do this */
+    margin-left: 15%;
+  }
+
+  /*EDIT CONTENT*/
+
+  .text-center {
+    /*not text center no longer*/
+    text-align: start;
+  }
+
+  .description {
+    margin: 0;
+    margin-bottom: 2em;
+    max-width: 50ch;
+  }
+
+  .email-input-container {
+    margin: 0;
+  }
+
+  .email-enter-button {
+    padding: 1.1rem 2.5rem;
+  }  
+}
